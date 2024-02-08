@@ -14,5 +14,11 @@
     "team": "Team",
     "contact": "Contact",
     "language": "Language"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for may not exist or be currently unavailable.",
+    "home": "Home page",
+    "contact": "Contact"
   }
 }

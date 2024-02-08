@@ -8,15 +8,10 @@ import { Menu, X } from 'lucide-react';
 import BannerLogo from '../../../assets/Banner/2.svg'
 import { useTranslations } from 'next-intl';
 import { Button } from '@/app/components/shared/Button';
-import { Select } from '@/app/components/shared/Select';
-import { SelectItem } from '@/app/components/shared/Select/selectItem';
 import LanguageSelector from './LanguageSelector';
 
 export default function Header() {
-
   const t = useTranslations('Header');
-  const router = useRouter();
-
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
@@ -26,13 +21,9 @@ export default function Header() {
     { name: 'Contact', href: '#' },
   ];
 
-  const handleChangeLocale = (locale) => {
-    router.push(router.asPath, router.asPath, { locale, scroll: false });
-  };
-
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
-      <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header role="heading" aria-level={1} className="absolute inset-x-0 top-0 z-50">
+      <nav role="navigation" aria-label="Main Menu" className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>

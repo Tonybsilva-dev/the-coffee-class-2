@@ -14,5 +14,11 @@
     "team": "Desenvolvedores",
     "contact": "Contato",
     "language": "Idioma"
+  },
+  "NotFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você está procurando pode não existir ou estar indisponível no momento.",
+    "home": "Página inicial",
+    "contact": "Contato"
   }
 }
