@@ -17,7 +17,7 @@
   },
   "NotFound": {
     "title": "Página não encontrada",
-    "description": "A página que você está procurando pode não existir ou estar indisponível no momento.",
+    "description": "Lamentamos, mas não conseguimos encontrar a página que procura.",
     "home": "Página inicial",
     "contact": "Contato"
   }
