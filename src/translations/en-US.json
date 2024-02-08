@@ -1,0 +1,18 @@
+{
+  "Index": {
+    "title": "An impulse for your business",
+    "description": "Receive customer orders quickly and conveniently, without the need for paper and pen, reducing errors and optimizing time.",
+    "button-1": "Get started",
+    "button-2": "Learn more",
+    "notice": "You are viewing a project for a study of various technologies. ",
+    "docs": "docs"
+  },
+  "Header": {
+    "login": "Log in",
+    "product": "Product",
+    "features": "Features",
+    "team": "Team",
+    "contact": "Contact",
+    "language": "Language"
+  }
+}

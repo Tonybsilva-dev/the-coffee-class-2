@@ -1,0 +1,18 @@
+{
+  "Index": {
+    "title": "Um impulso para o seu negócio",
+    "description": "Receba os pedidos dos clientes de forma rápida e prática, sem necessidade de papel e caneta, reduzindo erros e otimizando tempo.",
+    "button-1": "Começar",
+    "button-2": "Ler mais",
+    "notice": "Você está vendo um projeto de estudo de várias tecnologias. ",
+    "docs": "documentação"
+  },
+  "Header": {
+    "login": "Acessar",
+    "product": "Produto",
+    "features": "Funcionalidades",
+    "team": "Desenvolvedores",
+    "contact": "Contato",
+    "language": "Idioma"
+  }
+}
