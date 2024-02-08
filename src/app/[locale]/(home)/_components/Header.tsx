@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
@@ -9,11 +10,12 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/app/components/shared/Button';
 import { Select } from '@/app/components/shared/Select';
 import { SelectItem } from '@/app/components/shared/Select/selectItem';
+import LanguageSelector from './LanguageSelector';
 
 export default function Header() {
 
   const t = useTranslations('Header');
-
+  const router = useRouter();
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -23,6 +25,10 @@ export default function Header() {
     { name: 'Team', href: '#' },
     { name: 'Contact', href: '#' },
   ];
+
+  const handleChangeLocale = (locale) => {
+    router.push(router.asPath, router.asPath, { locale, scroll: false });
+  };
 
   return (
     <header className="absolute inset-x-0 top-0 z-50">
@@ -58,10 +64,7 @@ export default function Header() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 gap-3 lg:justify-end">
-          <Select placeholder={t('language')}>
-            <SelectItem value='en-US' text='en-US' />
-            <SelectItem value='pt-BR' text='pt-BR' />
-          </Select>
+          <LanguageSelector />
           <Button className="text-sm font-semibold leading-6">
             {t('login')} <span aria-hidden="true">&rarr;</span>
           </Button>
