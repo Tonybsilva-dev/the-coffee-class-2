@@ -1,29 +1,36 @@
-'use client'
+"use client";
 
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import { useState } from 'react';
-import { Dialog } from '@headlessui/react';
-import { Menu, X } from 'lucide-react';
-import BannerLogo from '../../../assets/Banner/2.svg'
-import { useTranslations } from 'next-intl';
-import { Button } from '@/app/components/shared/Button';
-import LanguageSelector from './LanguageSelector';
+import Image from "next/image";
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import { Menu, X } from "lucide-react";
+import BannerLogo from "../../../assets/Banner/2.svg";
+import { useTranslations } from "next-intl";
+import { Button } from "@/app/components/shared/Button";
+import LanguageSelector from "./LanguageSelector";
 
 export default function Header() {
-  const t = useTranslations('Header');
+  const t = useTranslations("Header");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Team', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: "Product", href: "/products" },
+    { name: "Features", href: "/features" },
+    { name: "Team", href: "/team" },
+    { name: "Help Center", href: "https://help-center-antonio-s.vercel.app/" },
   ];
 
   return (
-    <header role="heading" aria-level={1} className="absolute inset-x-0 top-0 z-50">
-      <nav role="navigation" aria-label="Main Menu" className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <header
+      role="heading"
+      aria-level={1}
+      className="absolute inset-x-0 top-0 z-50"
+    >
+      <nav
+        role="navigation"
+        aria-label="Main Menu"
+        className="flex items-center justify-between p-6 lg:px-8"
+      >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -38,7 +45,7 @@ export default function Header() {
         </div>
         <div className="flex lg:hidden">
           <Button
-            variant='ghost'
+            variant="ghost"
             type="button"
             className="-m-2.5 inline-flex items-center justify-center"
             onClick={() => setMobileMenuOpen(true)}
@@ -49,7 +56,11 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
               {t(item.name.toLowerCase())}
             </a>
           ))}
@@ -57,11 +68,16 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 gap-3 lg:justify-end">
           <LanguageSelector />
           <Button className="text-sm font-semibold leading-6">
-            {t('login')} <span aria-hidden="true">&rarr;</span>
+            {t("login")} <span aria-hidden="true">&rarr;</span>
           </Button>
         </div>
       </nav>
-      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+      <Dialog
+        as="div"
+        className="lg:hidden"
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+      >
         <div className="fixed inset-0 z-50" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
@@ -77,7 +93,7 @@ export default function Header() {
             </a>
             <Button
               type="button"
-              variant='ghost'
+              variant="ghost"
               className="-m-2.5 rounded-md p-2.5"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -103,7 +119,7 @@ export default function Header() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-orange-50"
                 >
-                  {t('login')}
+                  {t("login")}
                 </a>
               </div>
             </div>
