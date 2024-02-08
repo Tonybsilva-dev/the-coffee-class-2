@@ -17,7 +17,7 @@ export default function Header() {
     { name: "Product", href: "/products" },
     { name: "Features", href: "/features" },
     { name: "Team", href: "/team" },
-    { name: "Help Center", href: "https://help-center-antonio-s.vercel.app/" },
+    { name: "Help Center", href: "https://help-center-antonio-s.vercel.app/", target: "_blank" },
   ];
 
   return (
@@ -60,6 +60,7 @@ export default function Header() {
               key={item.name}
               href={item.href}
               className="text-sm font-semibold leading-6 text-gray-900"
+              target={item?.target || "_self"}
             >
               {t(item.name.toLowerCase())}
             </a>
@@ -82,7 +83,7 @@ export default function Header() {
         <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">The Coffee Class</span>
               <Image
                 width={40}
                 height={40}
