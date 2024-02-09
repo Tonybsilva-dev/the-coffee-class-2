@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import NextIntlProvider from "@/context/next-intl-client";
 import Spinner from "../components/layout/Spinner";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default async function RootLayout({
         <NextIntlProvider locale={locale} messages={messages}>
           {children}
         </NextIntlProvider>
+        <SpeedInsights/>
         <Analytics />
       </body>
     </html>
