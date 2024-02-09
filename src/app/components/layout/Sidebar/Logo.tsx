@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const Logo = (props: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
