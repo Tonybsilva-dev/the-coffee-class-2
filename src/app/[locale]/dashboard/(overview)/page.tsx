@@ -1,3 +1,4 @@
+import TitlePage from "@/app/components/layout/TitlePage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,7 +8,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1> This is a simple page of Dashboard  </h1>
+      <TitlePage title="Dashboard" description="Welcome [user.name]"/>
     </>
   )
 }
