@@ -1,11 +1,12 @@
-import DatadogInit from '../../_lib/DatadogRum'
+import DatadogInit from "../_lib/DatadogRum";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import NextIntlProvider from "@/context/next-intl-client";
 import Spinner from "../components/layout/Spinner";
 import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import AuthProvider from "../_providers/auth";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -37,12 +38,14 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={`${inter.className} antialiased`}>
-        <NextIntlProvider locale={locale} messages={messages}>
-          {children}
-        </NextIntlProvider>
-        <DatadogInit/>
-        <SpeedInsights/>
-        <Analytics />
+        <AuthProvider>
+          <NextIntlProvider locale={locale} messages={messages}>
+            {children}
+          </NextIntlProvider>
+          <DatadogInit />
+          <SpeedInsights />
+          <Analytics />
+        </AuthProvider>
       </body>
     </html>
   );

@@ -8,10 +8,16 @@ import BannerLogo from "../../../assets/Banner/2.svg";
 import { useTranslations } from "next-intl";
 import { Button } from "@/app/components/shared/Button";
 import LanguageSelector from "./LanguageSelector";
+import { signIn } from "next-auth/react";
+
 
 export default function Header() {
   const t = useTranslations("Header");
+
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleLoginClick = () => signIn("google");
 
   const navigation = [
     { name: "Product", href: "/products" },
@@ -33,7 +39,7 @@ export default function Header() {
       >
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+            <span className="sr-only">The Coffee Class</span>
             <Image
               width={80}
               height={80}
@@ -68,7 +74,7 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex lg:flex-1 gap-3 lg:justify-end">
           <LanguageSelector />
-          <Button className="text-sm font-semibold leading-6">
+          <Button className="text-sm font-semibold leading-6" onClick={handleLoginClick}>
             {t("login")} <span aria-hidden="true">&rarr;</span>
           </Button>
         </div>
