@@ -1,6 +1,7 @@
+'use client'
+
 import {
   Home,
-  GalleryHorizontal,
   Files,
   CookingPot,
   ChefHat,
@@ -10,19 +11,26 @@ import {
 } from "lucide-react";
 import { NavItem } from "./NavItem";
 
+import { useTranslations } from 'next-intl';
+
+
 export function MainNavigation() {
+
+  const t = useTranslations('NavItems');
+
+
   return (
     <nav
       className="space-y-0.5 max-h-full overflow-y-auto"
       aria-label="Primary Navigation"
     >
-      <NavItem title="Início" icon={Home} path="/dashboard/" />
-      <NavItem title="Usuários" icon={Users} path="/dashboard/users" />
-      <NavItem title="Produtos" icon={Package} path="/dashboard/products" />
-      <NavItem title="Cozinha" icon={CookingPot} path="/dashboard/kitchen" />
-      <NavItem title="Receitas" icon={ChefHat} path="/dashboard/recipes" />
-      <NavItem title="Relatórios" icon={Files} path="/dashboard/reports" />
-      <NavItem title="Estoque" icon={Boxes} path="/dashboard/stock" />
+      <NavItem title={t('home')} icon={Home} path="/dashboard/" />
+      <NavItem title={t('users')} icon={Users} path="/dashboard/users" />
+      <NavItem title={t('products')} icon={Package} path="/dashboard/products" />
+      <NavItem title={t('kitchen')} icon={CookingPot} path="/dashboard/kitchen" />
+      <NavItem title={t('receipts')} icon={ChefHat} path="/dashboard/recipes" />
+      <NavItem title={t('reports')} icon={Files} path="/dashboard/reports" />
+      <NavItem title={t('stock')} icon={Boxes} path="/dashboard/stock" />
     </nav>
   );
 }

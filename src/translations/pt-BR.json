@@ -20,5 +20,16 @@
     "description": "Lamentamos, mas não conseguimos encontrar a página que procura.",
     "home": "Página inicial",
     "contact": "Contato"
+  },
+  "NavItems": {
+    "home": "Página inicial",
+    "users": "Usuários",
+    "products": "Produtos",
+    "kitchen": "Cozinha",
+    "receipts": "Receitas",
+    "reports": "Relatórios",
+    "stock": "Estoque",
+    "support": "Suporte",
+    "settings": "Configurações"
   }
 }
