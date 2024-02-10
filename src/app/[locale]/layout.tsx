@@ -1,4 +1,4 @@
-import '../../_lib/DatadogRum'
+import DatadogInit from '../../_lib/DatadogRum'
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
@@ -40,6 +40,7 @@ export default async function RootLayout({
         <NextIntlProvider locale={locale} messages={messages}>
           {children}
         </NextIntlProvider>
+        <DatadogInit/>
         <SpeedInsights/>
         <Analytics />
       </body>

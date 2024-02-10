@@ -1,11 +1,13 @@
 
+"use client"
+
 import { datadogRum } from '@datadog/browser-rum';
 
 datadogRum.init({
-    applicationId: '703566b5-f3a1-4a06-b09e-ffae241a6544',
-    clientToken: 'pub04930b66115c354dbd3e9a6478b0e2d0',
+    applicationId: String(process.env.ENV_NAME),
+    clientToken: String(process.env.ENV_NAME),
     site: 'datadoghq.com',
-    service: 'next-the-coffee-class',
+    service: process.env.ENV_NAME,
     env: process.env.ENV_NAME || 'Development',
     // Specify a version number to identify the deployed version of your application in Datadog 
     // version: '1.0.0', 
@@ -16,3 +18,10 @@ datadogRum.init({
     trackLongTasks: true,
     defaultPrivacyLevel: 'mask-user-input',
 });
+
+
+export default function DatadogInit() {
+  // Render nothing - this component is only included so that the init code
+  // above will run client-side
+  return null;
+}
