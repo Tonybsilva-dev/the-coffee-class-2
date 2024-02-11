@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import { ScrollProgressHorizontal } from "@/app/components/layout/ScrollProgressHorizontal";
 import Sidebar from "@/app/components/layout/Sidebar";
+
+export const metadata: Metadata = {
+  title: 'Dashboard',
+};
 
 export default function DashboardLayout({
   children,

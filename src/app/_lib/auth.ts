@@ -19,14 +19,20 @@ export const authOptions: AuthOptions = {
         name: string;
         email: string;
         image: string;
+        expires: Date;
       };
 
       return session;
     },
+    async redirect({ url, baseUrl }) {
+      if (url.startsWith(baseUrl)) {
+        return url;
+      }
+      return baseUrl + '/dashboard';
+    },
   },
   pages: {
-    signIn: "/dashboard",
-    signOut: "/",
+    signIn: "/",
   },
   secret: process.env.NEXT_AUTH_SECRET as string,
 };

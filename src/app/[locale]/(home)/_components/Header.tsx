@@ -17,7 +17,7 @@ export default function Header() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const handleLoginClick = () => signIn("google");
+  const handleLoginClick = () => signIn("google", { callbackUrl: "/dashboard" });
 
   const navigation = [
     { name: "Product", href: "/products" },
